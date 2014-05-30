@@ -8,7 +8,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     AUTHOR              => 'Barbie <barbie@cpan.org>',
-    NAME                => 'WWW::Scraper::ISBN::Booktopia_Driver',
+    NAME                => 'WWW-Scraper-ISBN-Booktopia_Driver',
     VERSION_FROM        => 'lib/WWW/Scraper/ISBN/Booktopia_Driver.pm',
     ABSTRACT            => 'Search driver for the Booktopia online book catalog',
     NO_META             => 1,
