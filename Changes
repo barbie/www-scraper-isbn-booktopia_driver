@@ -5,6 +5,7 @@ Revision history for WWW-Scraper-ISBN-Booktopia_Driver
         - fixed distribution name in META.
         - upgrade to WWW-Scraper-ISBN-1.00.
         - conversion routines now moved to WWW::Scraper::ISBN::Driver.
+        - reworked test failure checks
 
 0.17    2013-03-26
         - tests changed to reflect website updates.
