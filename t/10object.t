@@ -30,41 +30,39 @@ my %tests = (
         [ 'like',   'description',  qr|The Mediterranean Sea lies at the very heart of recent world history|           ],
         [ 'like',   'book_link',    qr|http://www.booktopia.com.au/[^/]+/prod9780007203055.html|    ]
     ],
-    '0571239560' => [
-        [ 'is',     'isbn',         '9780571239566'             ],
-        [ 'is',     'isbn10',       '0571239560'                ],
-        [ 'is',     'isbn13',       '9780571239566'             ],
-        [ 'is',     'ean13',        '9780571239566'             ],
-        [ 'is',     'title',        'Touching from a Distance : Ian Curtis and Joy Division'        ],
+    '0571313604' => [
+        [ 'is',     'isbn',         '9780571313600'             ],
+        [ 'is',     'isbn10',       '0571313604'                ],
+        [ 'is',     'isbn13',       '9780571313600'             ],
+        [ 'is',     'ean13',        '9780571313600'             ],
+        [ 'is',     'title',        'Touching from a Distance'  ],
         [ 'is',     'author',       'Deborah Curtis'            ],
-        #[ 'like',   'publisher',    qr|FABER \S+ FABER|i        ],
-        [ 'is',     'publisher',    undef                       ],
-        [ 'is',     'pubdate',      'October 2007'              ],
+        [ 'is',     'publisher',    'Faber & Faber'             ],
+        [ 'is',     'pubdate',      '1st December 2014'         ],
         [ 'is',     'pages',        240                         ],
-        [ 'like',   'image_link',   qr|touching-from-a-distance-ian-curtis-and-joy-division.jpg|    ],
-        [ 'like',   'thumb_link',   qr|touching-from-a-distance-ian-curtis-and-joy-division.jpg|    ],
+        [ 'like',   'image_link',   qr|touching-from-a-distance.jpg|    ],
+        [ 'like',   'thumb_link',   qr|touching-from-a-distance.jpg|    ],
         [ 'like',   'description',  qr|Ian Curtis left behind a legacy rich in artistic genius|     ],
-        [ 'like',   'book_link',    qr|http://www.booktopia.com.au/[^/]+/prod9780571239566.html|    ]
+        [ 'like',   'book_link',    qr|http://www.booktopia.com.au/[^/]+/prod9780571313600.html|    ]
     ],
-    '9780571239566' => [
-        [ 'is',     'isbn',         '9780571239566'             ],
-        [ 'is',     'isbn10',       '0571239560'                ],
-        [ 'is',     'isbn13',       '9780571239566'             ],
-        [ 'is',     'ean13',        '9780571239566'             ],
-        [ 'is',     'title',        'Touching from a Distance : Ian Curtis and Joy Division'        ],
+    '9780571313600' => [
+        [ 'is',     'isbn',         '9780571313600'             ],
+        [ 'is',     'isbn10',       '0571313604'                ],
+        [ 'is',     'isbn13',       '9780571313600'             ],
+        [ 'is',     'ean13',        '9780571313600'             ],
+        [ 'is',     'title',        'Touching from a Distance'  ],
         [ 'is',     'author',       'Deborah Curtis'            ],
-        #[ 'like',   'publisher',    qr|FABER \S+ FABER|i        ],
-        [ 'is',     'publisher',    undef                       ],
-        [ 'is',     'pubdate',      'October 2007'              ],
+        [ 'is',     'publisher',    'Faber & Faber'             ],
+        [ 'is',     'pubdate',      '1st December 2014'         ],
         [ 'is',     'pages',        240                         ],
         [ 'like',   'depth',        qr/\d+/                     ],
         [ 'like',   'width',        qr/\d+/                     ],
         [ 'like',   'height',       qr/\d+/                     ],
         [ 'like',   'weight',       qr/\d+/                     ],
-        [ 'like',   'image_link',   qr|touching-from-a-distance-ian-curtis-and-joy-division.jpg|    ],
-        [ 'like',   'thumb_link',   qr|touching-from-a-distance-ian-curtis-and-joy-division.jpg|    ],
+        [ 'like',   'image_link',   qr|touching-from-a-distance.jpg|    ],
+        [ 'like',   'thumb_link',   qr|touching-from-a-distance.jpg|    ],
         [ 'like',   'description',  qr|Ian Curtis left behind a legacy rich in artistic genius|     ],
-        [ 'like',   'book_link',    qr|http://www.booktopia.com.au/[^/]+/prod9780571239566.html|    ]
+        [ 'like',   'book_link',    qr|http://www.booktopia.com.au/[^/]+/prod9780571313600.html|    ]
     ],
 );
 
