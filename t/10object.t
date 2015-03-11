@@ -2,7 +2,7 @@
 use strict;
 
 use Data::Dumper;
-use Test::More tests => 55;
+use Test::More tests => 57;
 use WWW::Scraper::ISBN;
 
 ###########################################################
@@ -11,24 +11,24 @@ my $DRIVER          = 'Booktopia';
 my $CHECK_DOMAIN    = 'www.google.com';
 
 my %tests = (
-    '9780007203055' => [
-        [ 'is',     'isbn',         '9780007203055'             ],
-        [ 'is',     'isbn10',       '0007203055'                ],
-        [ 'is',     'isbn13',       '9780007203055'             ],
-        [ 'is',     'ean13',        '9780007203055'             ],
-        [ 'like',   'author',       qr/Simon Ball/              ],
-        [ 'like',   'title',        qr/Bitter Sea/              ],
-        [ 'like',   'pubdate',      qr/2010/                    ],
-        [ 'is',     'binding',      'Paperback'                 ],
-        [ 'is',     'pages',        416                         ],
+    '9781785150289' => [
+        [ 'is',     'isbn',         '9781785150289'             ],
+        [ 'is',     'isbn10',       '1785150289'                ],
+        [ 'is',     'isbn13',       '9781785150289'             ],
+        [ 'is',     'ean13',        '9781785150289'             ],
+        [ 'like',   'author',       qr/Harper Lee/              ],
+        [ 'like',   'title',        qr/Go Set a Watchman/       ],
+        [ 'is',     'publisher',    'Cornerstone'               ],
+        [ 'is',     'binding',      'Hardcover'                 ],
+        [ 'is',     'pages',        320                         ],
         [ 'like',   'depth',        qr/\d+/                     ],
         [ 'like',   'width',        qr/\d+/                     ],
         [ 'like',   'height',       qr/\d+/                     ],
         [ 'like',   'weight',       qr/\d+/                     ],
-        [ 'like',   'image_link',   qr|bitter-sea.jpg|          ],
-        [ 'like',   'thumb_link',   qr|bitter-sea.jpg|          ],
-        [ 'like',   'description',  qr|The Mediterranean Sea lies at the very heart of recent world history|           ],
-        [ 'like',   'book_link',    qr|http://www.booktopia.com.au/[^/]+/prod9780007203055.html|    ]
+        [ 'like',   'image_link',   qr|go-set-a-watchman.jpg|   ],
+        [ 'like',   'thumb_link',   qr|go-set-a-watchman.jpg|   ],
+        [ 'like',   'description',  qr|Set during the mid-1950s|    ],
+        [ 'like',   'book_link',    qr|http://www.booktopia.com.au/[^/]+/prod9781785150289.html|    ]
     ],
     '0571313604' => [
         [ 'is',     'isbn',         '9780571313600'             ],
@@ -39,6 +39,7 @@ my %tests = (
         [ 'is',     'author',       'Deborah Curtis'            ],
         [ 'is',     'publisher',    'Faber & Faber'             ],
         [ 'is',     'pubdate',      '1st December 2014'         ],
+        [ 'is',     'binding',      'Paperback'                 ],
         [ 'is',     'pages',        240                         ],
         [ 'like',   'image_link',   qr|touching-from-a-distance.jpg|    ],
         [ 'like',   'thumb_link',   qr|touching-from-a-distance.jpg|    ],
@@ -54,6 +55,7 @@ my %tests = (
         [ 'is',     'author',       'Deborah Curtis'            ],
         [ 'is',     'publisher',    'Faber & Faber'             ],
         [ 'is',     'pubdate',      '1st December 2014'         ],
+        [ 'is',     'binding',      'Paperback'                 ],
         [ 'is',     'pages',        240                         ],
         [ 'like',   'depth',        qr/\d+/                     ],
         [ 'like',   'width',        qr/\d+/                     ],
