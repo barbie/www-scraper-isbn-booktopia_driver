@@ -121,20 +121,20 @@ sub search {
 #print STDERR "\n# html=[\n$html\n]\n";
 
     my $data;
-    ($data->{publisher})                = $html =~ m!<span class="label">\s*Publisher:\s*</span>\s*([^<]+)!si;
+    ($data->{publisher})                = $html =~ m!<b>Publisher:</b>([^<]+)<br>!si;
     ($data->{pubdate})                  = $html =~ m!<span class="label">\s*Published:\s*</span>\s*([^<]+)!si;
 
     $data->{publisher} =~ s!<[^>]+>!!g  if($data->{publisher});
     $data->{pubdate} =~ s!\s+! !g       if($data->{pubdate});
 
-    ($data->{image})                    = $html =~ m!(http://covers.booktopia.com.au/big/\d+/[-\w]+\.jpg)!si;
-    ($data->{thumb})                    = $html =~ m!(http://covers.booktopia.com.au/\d+/\d+/[-\w]+\.jpg)!si;
+    ($data->{image})                    = $html =~ m!(https://www.booktopia.com.au/http_coversbooktopiacomau/big/\d+/[-\w.]+\.jpg)"!si;
+    ($data->{thumb})                    = $html =~ m!(https://www.booktopia.com.au/http_coversbooktopiacomau/\d+/\d+/[-\w.]+\.jpg)"!si;
     ($data->{isbn13})                   = $html =~ m!<b>\s*ISBN:\s*</b>\s*(\d+)!si;
     ($data->{isbn10})                   = $html =~ m!<b>\s*ISBN-10:\s*</b>\s*(\d+)!si;
     ($data->{author})                   = $html =~ m!<div id="contributors">\s*(?:By|Author):\s*(.*?)</div>!si;
     ($data->{title})                    = $html =~ m!<meta property="og:title" content="([^"]+)"!si;
     ($data->{title})                    = $html =~ m!<a href="[^"]+" class="largeLink">([^<]+)</a><br/><br/>!si  unless($data->{title});
-    ($data->{description})              = $html =~ m!<div id="description">(.*?)</div>!si;
+    ($data->{description})              = $html =~ m!<p id="google-preview-information" style="display:none;">\s*<b>[^<]+</b>\s*</p>\s*<p>(.*?)</p>!si;
     ($data->{binding})                  = $html =~ m!<span class="label">\s*Format:\s*</span>\s*([^<]+)!si;
     ($data->{pages})                    = $html =~ m!<b>\s*Number Of Pages:\s*</b>\s*([\d.]+)!si;
     ($data->{weight})                   = $html =~ m!<span class="label">\s*Weight \(kg\):\s*</span>\s*([\d.]+)!si;
@@ -194,7 +194,7 @@ sub search {
 		'width'		    => $data->{width},
 		'height'		=> $data->{height},
 		'depth'		    => $data->{depth},
-        'html'          => $html
+#        'html'          => $html
 	};
 
 #use Data::Dumper;
