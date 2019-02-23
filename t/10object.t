@@ -41,10 +41,10 @@ my %tests = (
         [ 'is',     'pubdate',      '1st December 2014'         ],
         [ 'is',     'binding',      'Paperback'                 ],
         [ 'is',     'pages',        240                         ],
-        [ 'like',   'image_link',   qr|touching-from-a-distance.jpg|    ],
-        [ 'like',   'thumb_link',   qr|touching-from-a-distance.jpg|    ],
-        [ 'like',   'description',  qr|Ian Curtis left behind a legacy rich in artistic genius|     ],
-        [ 'like',   'book_link',    qr|https://www.booktopia.com.au/[^/]+/prod9780571313600.html|    ]
+        [ 'like',   'image_link',   qr|touching-from-a-distance.jpg| ],
+        [ 'like',   'thumb_link',   qr|touching-from-a-distance.jpg| ],
+        [ 'like',   'description',  qr|Ian Curtis left behind a legacy rich in artistic genius|   ],
+        [ 'like',   'book_link',    qr|https://www.booktopia.com.au/[^/]+/prod9780571313600.html| ]
     ],
     '9780571313600' => [
         [ 'is',     'isbn',         '9780571313600'             ],
@@ -61,10 +61,10 @@ my %tests = (
         [ 'like',   'width',        qr/\d+/                     ],
         [ 'like',   'height',       qr/\d+/                     ],
         [ 'like',   'weight',       qr/\d+/                     ],
-        [ 'like',   'image_link',   qr|touching-from-a-distance.jpg|    ],
-        [ 'like',   'thumb_link',   qr|touching-from-a-distance.jpg|    ],
-        [ 'like',   'description',  qr|Ian Curtis left behind a legacy rich in artistic genius|     ],
-        [ 'like',   'book_link',    qr|https://www.booktopia.com.au/[^/]+/prod9780571313600.html|    ]
+        [ 'like',   'image_link',   qr|touching-from-a-distance.jpg| ],
+        [ 'like',   'thumb_link',   qr|touching-from-a-distance.jpg| ],
+        [ 'like',   'description',  qr|Ian Curtis left behind a legacy rich in artistic genius|   ],
+        [ 'like',   'book_link',    qr|https://www.booktopia.com.au/[^/]+/prod9780571313600.html| ]
     ],
 );
 
@@ -78,12 +78,12 @@ my $scraper = WWW::Scraper::ISBN->new();
 isa_ok($scraper,'WWW::Scraper::ISBN');
 
 SKIP: {
-	skip "Can't see a network connection", $tests+1   if(pingtest($CHECK_DOMAIN));
+    skip "Can't see a network connection", $tests+1   if(pingtest($CHECK_DOMAIN));
 
-	$scraper->drivers($DRIVER);
+    $scraper->drivers($DRIVER);
 
     # this ISBN doesn't exist
-	my $isbn = "1234567890";
+    my $isbn = "1234567890";
     my $record;
     eval { $record = $scraper->search($isbn); };
     if($record && $record->found) {
